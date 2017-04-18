@@ -1,0 +1,58 @@
+.register{
+    font-family: '宋体';
+    line-height: 1.2em;
+    font-size: 15px;
+    background-color: #F7F7F7;
+    /*.login的背景颜色是在custom.min.css里*/
+}
+.register a:hover{
+    text-decoration: underline;
+    color: black;
+}
+.register .content{
+    width: 400px;
+    margin: 60px auto;
+    padding: 30px;
+    padding-top: 20px;
+    padding-bottom: 15px;
+    text-align: center;
+}
+.register .controls input{
+    height: 30px;
+}
+.register .controls label{
+    margin-bottom: 20px;
+}
+input[name="username"],input[name="email"],input[name="password"],input[name="repassword"]{
+    width: 80%;
+}
+h3::before {
+    display: inline-block;
+    position: relative;
+    top: -7px;
+    right: 40px;
+    content: "";
+    width: 100px;
+    color: black;
+    height: 0px;
+    border: 1px solid #C9C9C9;
+}
+h3::after{
+        display: inline-block;
+    position: relative;
+    top: -7px;
+    left: 40px;
+    content: "";
+    width: 100px;
+    color: black;
+    height: 0px;
+    border: 1px solid #C9C9C9;
+}
+.register .copyright{
+    clear: both;
+    text-align: center;
+    width: 250px;
+    margin: 0 auto;
+    padding: 10px 10px 0 10px;
+    font-size: 12px;
+}
