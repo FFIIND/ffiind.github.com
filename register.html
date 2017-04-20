@@ -1,62 +1,59 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>register</title>
-        <!-- 外来css -->
-        <!-- Bootstrap -->
-        <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-        <!-- Font Awesome -->
-        <link rel="stylesheet" href="lib/font-awesome/css/font-awesome.min.css"">
-        <!-- Animate.css  可以删-->
-        <link rel="stylesheet" href="lib/Animate/animate.css">
-        <!-- 自定义 -->
-        <link rel="stylesheet" href="css/register.css">
-    </head>
-    <body class="register">
-        <div class="content">
-            <!-- php注册新用户-->
-            <form class="form-horizontal register-form" action="register.php" method="post">
-                <h3 class="form-title">注册</h3>
-                <hr>
-                <div class="controls">
-                    <div class="glyphicon glyphicon-input-icon left" >
-                        <label>
-                            <i class="glyphicon glyphicon-user"></i>
-                            <input class="glyphicon glyphicon-m-wrap " type="text" placeholder="用户名" name="username"/><br>
-                        </label>
-                        <label>
-                            <i class="glyphicon glyphicon-envelope"></i>
-                            <input class="glyphicon glyphicon-m-wrap " type="text" placeholder="邮箱" name="email"/><br>
-                        </label>
-                        <label>
-                            <i class="glyphicon glyphicon-lock"></i>
-                            <input class="glyphicon glyphicon-m-wrap " type="password" placeholder="密码" name="password"/>
-                        </label>
-                        <label>
-                            <i class="glyphicon glyphicon-edit"></i>
-                            <input class="glyphicon glyphicon-m-wrap " type="password" placeholder="再次输入密码" name="repassword"/>
-                        </label>
-                    </div>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>register</title>
+    <link rel="stylesheet" href="css/register.css">
+<!-- 外来css -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
+    <link rel="stylesheet" href="css/custom.min.css">
+<!-- Animate.css  可以删-->
+    <link href="https://colorlib.com/polygon/gentelella/css/animate.min.css" rel="stylesheet">
+  </head>
+</head>
+<body class="register"> 
+    <div class="content">
+<!-- php注册新用户-->
+        <form class="form-horizontal register-form" action="register.php" method="post">
+            <h3 class="form-title">注册</h3>
+            <hr>
+            <div class="controls">
+                <div class="glyphicon glyphicon-input-icon left" >
+                    <label>
+                        <i class="glyphicon glyphicon-user"></i>
+                        <input class="glyphicon glyphicon-m-wrap " type="text" placeholder="用户名" name="username"/><br>
+                    </label>
+                    <label>
+                        <i class="glyphicon glyphicon-envelope"></i>
+                        <input class="glyphicon glyphicon-m-wrap " type="text" placeholder="邮箱" name="email"/><br>
+                    </label>
+                    <label>
+                        <i class="glyphicon glyphicon-lock"></i>
+                        <input class="glyphicon glyphicon-m-wrap " type="password" placeholder="密码" name="password"/>
+                    </label>
+                    <label>
+                        <i class="glyphicon glyphicon-edit"></i>
+                        <input class="glyphicon glyphicon-m-wrap " type="password" placeholder="再次输入密码" name="repassword"/>
+                    </label>
                 </div>
-                <div class="form-actions">
-                    <button type="submit" class="btn register-btn " name="submit">
+            </div>
+            <div class="form-actions">
+                <button type="submit" class="btn register-btn " name="submit">
                     注册 <i class=" glyphicon glyphicon-arrow-right"></i>
-                    </button>
-                </div>
-                <hr>
-                <div class="have-account">
-                    <p>
-                        已有账号?&nbsp;<!-- &nbsp;空格 -->
-                        <a id="register-btn" href="login.html">登陆</a>
-                    </p>
-                </div>
-            </form>
-        </div>
-        <div class="copyright">
-            2017 &copy; App印象.
-        </div>
-    </body>
+                </button>
+            </div>
+            <hr>
+            <div class="have-account">
+                <p>
+                    已有账号?&nbsp;<!-- &nbsp;空格 -->
+                    <a id="register-btn" href="login.html">登陆</a>
+                </p>
+            </div>
+        </form>
+    </div>
+	<div class="copyright">
+    	2017 &copy; App印象.
+	</div>
+</body>
 </html>
