@@ -1,10 +1,67 @@
 @charset "UTF-8";
+
 /**
  * 
  * @authors Your Name (you@example.org)
  * @date    2017-04-17 22:45:46
  * @version $Id$
  */
+.nav {
+     /*background: #2E4667;*/
+ }
 #content {
     margin-top: 50px;
+    border-bottom: 1px solid #E7E7E7
+}
+#reportrange {
+    background: #fff;
+    cursor: pointer;
+    padding: 6px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px; 
+}
+#col-filter {
+    padding-top: 25px;
+}
+#reportrange {
+    margin-left: 10px;
+}
+#conatiner-compare {
+    margin-top: 20px;
+}
+#row-compare-header {
+    padding: 10px 15px 10px 0;
+}
+.icon-col {
+    width: 70px;
+}
+.icon {
+    max-height: 50px;
+    max-width: 50px;
+}
+thead tr th[data-field="appName"] {
+    text-align: left;
+}
+.platform-badge {
+    font-size: 12px;
+    color: #A0A0A0;
+}
+.platform-badge img{
+    width: 25px;
+    height: 25px;
+}
+.appname a {
+    font-size: 16px;
+}
+.grade-col, .chart-col {
+    text-align: center;
+}
+.table > tbody > tr > td {
+    vertical-align: middle;
+}
+#table thead tr th div{
+    padding: 8px 8px 0 8px;
+}
+.grade-col i {
+    color: #F3B636
 }

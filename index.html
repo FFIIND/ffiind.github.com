@@ -6,11 +6,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- 上述3个meta标签必须放在最前面，任何其他内容都必须跟随其后！ -->
         <title>App Impression</title>
-        
         <!-- Bootstrap -->
-        <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
         <!-- Font Awesome -->
-        <link rel="stylesheet" href="lib/font-awesome/css/font-awesome.min.css"">
+        <link rel="stylesheet" href="lib/font-awesome/css/font-awesome.min.css">
+        <!-- Data Range Picker -->
+        <link rel="stylesheet" type="text/css" href="lib/daterangepicker/daterangepicker.css">
+        <!-- Bootstrap sortable table -->
+        <link rel="stylesheet" type="text/css" href="lib/bootstrap-table/bootstrap-table.css">
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
         <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -32,20 +35,24 @@
                     <span class="icon-bar"></span>
                     </button>
                     <a href="#" class="navbar-brand">
-                        <img src="" alt="Impression">
+                        <img src="" alt="Impression" />
                     </a>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="navbar-collapse">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="#">首页 <span class="sr-only">(current)</span></a></li>
+                        <li class="active">
+                            <a href="#">首页 <span class="sr-only">(current)</span></a>
+                        </li>
                         <li><a href="#">统计</a></li>
                         <li><a href="#">评论</a></li>
                         <li><a href="#">设置</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">帮助 <span class="caret"></span></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                帮助 <span class="caret"></span>
+                            </a>
                             <ul class="dropdown-menu">
                                 <li><a href="#">观看教程</a></li>
                                 <li role="separator" class="divider"></li>
@@ -53,7 +60,9 @@
                             </ul>
                         </li>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">瑶瑶欲坠 <span class="caret"></span></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                摇摇欲坠 <span class="caret"></span>
+                            </a>
                             <ul class="dropdown-menu">
                                 <li><a href="#">我的帐号</a></li>
                                 <li role="separator" class="divider"></li>
@@ -61,25 +70,136 @@
                             </ul>
                         </li>
                     </ul>
-                </div> <!-- end of navbar-collapse -->
-            </div> <!-- end of container-fluid -->
-        </nav>
-
-        <div class="container-fluid" id="content">
-            <div class="row">
-                <div class="panel panel-default">
-                    <div class="panel-heading"><h3>应用近况</h3></div>
-                    <div class="panel-body">展示最关注的 APP 评论近况</div>
                 </div>
-                <div class="col-md-2 sidebar"></div>
-                <div class="col-md-10 main"></div>
+                <!-- end of navbar-collapse -->
+            </div>
+            <!-- end of container-fluid -->
+        </nav>
+        <!-- 标题栏 -->
+        <div class="container-fluid" id="content">
+            <div class="row" id="content-row">
+                <div class="col col-md-6">
+                    <h3>应用近况</h3>
+                    <!-- <small>展示最关注的 APP 评论近况</small> -->
+                    <p>展示最关注的 APP 评论近况</p>
+                </div>
+                <div class="col col-md-6" id="col-filter">
+                    <!-- 时间选择 -->
+                    <div id="reportrange" class="pull-right">
+                        <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>&nbsp;
+                        <span></span><b class="caret"></b>
+                    </div>
+                    <!-- 筛选商店 -->
+                    <div class="dropdown pull-right">
+                        <button class="btn btn-default dropdown-toggle" id="dropdownMenu1" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        所有商店 <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                            <li><a href="#">所有商店</a></li>
+                            <li><a href="#">iOS</a></li>
+                            <li><a href="#">Android</a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
-
-        <div class="container"></div>
-        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <!-- 内容 -->
+        <div class="container" id="conatiner-compare">
+            <div class="row" id="row-compare-header">
+                <button class="btn btn-default btn-sm pull-right" type="submit">导出</button>
+            </div>
+            <div class="row">
+                <table id="table" data-toggle="table" class="table-no-bordered">
+                    <thead>
+                        <tr>
+                            <th data-field="icon" class="icon-col"></th>
+                            <th data-field="appName" data-sortable="true">应用</th>
+                            <th data-field="grade" data-sortable="true">评分</th>
+                            <th data-field="reviews">评论数</th>
+                            <th data-field="download">下载量</th>
+                            <th data-field="sentiment">态度</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="icon-col"><img class="icon" src="img/icon/Wechat.png" alt="icon"></td>
+                            <td>
+                                <div class="appname"><a href="#">Wechat</a></div>
+                                <div class="subtitle">
+                                    <span class="platform-badge">
+                                        <img src="img/icon/app_store.png" alt="android">iOS
+                                    </span>
+                                </div>
+                            </td>
+                            <td class="grade-col"><i class="fa fa-star" aria-hidden="true"></i> 3.1</td>
+                            <td>
+                                <div class="chart-col"><img src="img/example-1.png" alt="chart"></div>
+                            </td>
+                            <td>
+                                <div class="chart-col"><img src="img/example-2.png" alt="chart"></div>
+                            </td>
+                            <td>
+                                <div class="chart-col"><img src="img/example-3.png" alt="chart"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="icon-col"><img class="icon" src="img/icon/telegram.jpg" alt="icon"></td>
+                            <td>
+                                <div class="appname"><a href="#">Telegram Messenger</a></div>
+                                <div class="subtitle">
+                                    <span class="platform-badge">
+                                        <img src="img/icon/android.png" alt="android">Android
+                                    </span>
+                                </div>
+                            </td>
+                            <td class="grade-col"><i class="fa fa-star" aria-hidden="true"></i> 3.7</td>
+                            <td>
+                                <div class="chart-col"><img src="img/example-4.png" alt="chart"></div>
+                            </td>
+                            <td>
+                                <div class="chart-col"><img src="img/example-5.png" alt="chart"></div>
+                            </td>
+                            <td>
+                                <div class="chart-col"><img src="img/example-1.png" alt="chart"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="icon-col"><img class="icon" src="img/icon/workflow.jpg" alt="icon"></td>
+                            <td>
+                                <div class="appname"><a href="#">Workflow</a></div>
+                                <div class="subtitle">
+                                    <span class="platform-badge">
+                                        <img src="img/icon/app_store.png" alt="android">iOS
+                                    </span>
+                                </div>
+                            </td>
+                            <td class="grade-col"><i class="fa fa-star" aria-hidden="true"></i> 3.3</td>
+                            <td>
+                                <div class="chart-col"><img src="img/example-2.png" alt="chart"></div>
+                            </td>
+                            <td>
+                                <div class="chart-col"><img src="img/example-3.png" alt="chart"></div>
+                            </td>
+                            <td>
+                                <div class="chart-col"><img src="img/example-4.png" alt="chart"></div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- jQuery (Bootstrap必需) -->
         <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
-        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <!-- Bootstrap -->
         <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+        <!-- Moment -->
+        <script type="text/javascript" src="lib/momentjs/moment.min.js"></script>
+        <!-- Date Range Picker -->
+        <script type="text/javascript" src="lib/daterangepicker/daterangepicker.js"></script>
+        <!-- bootstrap sortable table -->
+        <script type="text/javascript" src="lib/bootstrap-table/bootstrap-table.js"></script>
+        <script type="text/javascript" src="lib/bootstrap-table/bootstrap-table-zh-CN.js"></script>
+        <!-- 自定义 -->
+        <script type="text/javascript" src="js/index.js"></script>
     </body>
 </html>
