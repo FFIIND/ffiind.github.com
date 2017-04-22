@@ -6,12 +6,13 @@
  * @date    2017-04-17 22:45:46
  * @version $Id$
  */
-.nav {
-     /*background: #2E4667;*/
- }
+body {
+    background: #F1F2F4;
+}
 #content {
     margin-top: 50px;
-    border-bottom: 1px solid #E7E7E7
+    background: #fff;
+    border-bottom: 1px solid #E7E7E7;
 }
 #reportrange {
     background: #fff;
@@ -27,6 +28,7 @@
     margin-left: 10px;
 }
 #conatiner-compare {
+    background: #fff;
     margin-top: 20px;
 }
 #row-compare-header {
@@ -43,12 +45,15 @@ thead tr th[data-field="appName"] {
     text-align: left;
 }
 .platform-badge {
+    display: flex;
+    align-items: flex-end;
     font-size: 12px;
     color: #A0A0A0;
+    /*line-height: 25px;*/
 }
 .platform-badge img{
-    width: 25px;
-    height: 25px;
+    width: 20px;
+    height: 20px;
 }
 .appname a {
     font-size: 16px;
