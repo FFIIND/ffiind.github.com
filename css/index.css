@@ -29,7 +29,7 @@ body {
 }
 #conatiner-compare {
     background: #fff;
-    margin-top: 20px;
+    margin-top: 40px;
 }
 #row-compare-header {
     padding: 10px 15px 10px 0;
@@ -63,9 +63,6 @@ thead tr th[data-field="appName"] {
 }
 .table > tbody > tr > td {
     vertical-align: middle;
-}
-#table thead tr th div{
-    padding: 8px 8px 0 8px;
 }
 .grade-col i {
     color: #F3B636
