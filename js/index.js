@@ -5,7 +5,7 @@
  * @version $Id$
  */
 $(function() {
-
+    // -------------初始化日期选择
     var start = moment().subtract(29, 'days');
     var end = moment();
 
@@ -54,4 +54,6 @@ $(function() {
     //     sortable: true,
     //     sortName: 'price'
     // });
+    // -----------初始化提示框
+    $('[data-toggle="tooltip"]').tooltip();
 });

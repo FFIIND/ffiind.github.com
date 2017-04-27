@@ -112,12 +112,23 @@
                 <table id="table" data-toggle="table" class="table-no-bordered">
                     <thead>
                         <tr>
-                            <th data-field="icon" class="icon-col"></th>
-                            <th data-field="appName" data-sortable="true">应用</th>
-                            <th data-field="grade" data-sortable="true">评分</th>
-                            <th data-field="reviews">评论数</th>
-                            <th data-field="download">下载量</th>
-                            <th data-field="sentiment">态度</th>
+                            <th data-field="icon " class="icon-col"></th>
+                            <th data-field="appName" data-sortable="true">
+                                <div>应用</div>
+                            </th>
+                            <th data-field="grade" data-sortable="true">
+                                
+                                <div href="#" data-toggle="tooltip" data-placement="top" title="所选时间内带文字内容评论的平均分">评分</div>
+                            </th>
+                            <th data-field="reviews">
+                                <div href="#" data-toggle="tooltip" data-placement="top" title="所选时间内带文字内容评论数">评论数</div>
+                            </th>
+                            <th data-field="download">
+                                <div href="#" data-toggle="tooltip" data-placement="top" title="所选时间内应用下载量">下载量</div>
+                            </th>
+                            <th data-field="sentiment">
+                                <div href="#" data-toggle="tooltip" data-placement="top" title="所选时间内积极内容的评论数">态度</div>
+                            </th>
                         </tr>
                     </thead>
                     <tbody>
@@ -188,8 +199,9 @@
                 </table>
             </div>
         </div>
+
         <!-- jQuery (Bootstrap必需) -->
-        <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+        <script src="lib/jQuery/jquery-3.2.1.min.js"></script>
         <!-- Bootstrap -->
         <script src="lib/bootstrap/js/bootstrap.min.js"></script>
         <!-- Moment -->

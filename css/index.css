@@ -14,18 +14,18 @@ body {
     background: #fff;
     border-bottom: 1px solid #E7E7E7;
 }
+/*日期选择*/
 #reportrange {
+    margin-left: 10px;
     background: #fff;
     cursor: pointer;
     padding: 6px 10px;
     border: 1px solid #ccc;
     border-radius: 4px; 
 }
+/*筛选列*/
 #col-filter {
     padding-top: 25px;
-}
-#reportrange {
-    margin-left: 10px;
 }
 #conatiner-compare {
     background: #fff;
@@ -34,6 +34,7 @@ body {
 #row-compare-header {
     padding: 10px 15px 10px 0;
 }
+/*图标列*/
 .icon-col {
     width: 70px;
 }
@@ -41,9 +42,19 @@ body {
     max-height: 50px;
     max-width: 50px;
 }
+/* 应用名列居左 */
 thead tr th[data-field="appName"] {
     text-align: left;
 }
+.both div{
+    padding-left: 18px;
+}
+/* 提示框宽度 */
+.tooltip-inner {
+    min-width: 100px;
+    max-width: 100%; 
+}
+/* 应用平台标志 */
 .platform-badge {
     display: flex;
     align-items: flex-end;
@@ -55,15 +66,19 @@ thead tr th[data-field="appName"] {
     width: 20px;
     height: 20px;
 }
+/* 应用名 */
 .appname a {
     font-size: 16px;
 }
+/* 列内居中 */
 .grade-col, .chart-col {
     text-align: center;
 }
+/*表格列内居中*/
 .table > tbody > tr > td {
     vertical-align: middle;
 }
+/*评分列星星图标颜色*/
 .grade-col i {
-    color: #F3B636
+    color: #F3B636;
 }
